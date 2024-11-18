@@ -34,10 +34,7 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/assets",
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/favicon.svg"
             ],
             "styles": [
               "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
