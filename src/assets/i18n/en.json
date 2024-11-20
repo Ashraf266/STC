@@ -17,6 +17,21 @@
     "EXCLUSIONS-CONTENT-2": "These devices have been tested for compatibility with the most common Brown applications and Brown WiFi. Should an end user desire a device/feature/service that is not available on one of the approved devices, the end user may present a case for Telecommunications to review the device for conditional approval. In the event the device is not approved and an end user still wants it, the end user will be required to sign a waiver confirming understanding that the University will offer best effort support of the devices. University-issued devices will be configured by CIS and will have active-synch enabled. The University reserves the right to push policies to mobile devices and to remotely reset devices. Any attempt to override University policies, i.e., Jailbreak a University-issued device, or any other action that violates manufacturer's warranty or Brown's agreement with carriers is prohibited.",
     "USE-TITLE": "3. Use",
     "USE-CONTENT": "Brown applications and Brown WiFi. Should an end user desire a device/feature/service that is not available on one of the approved devices, the end user may present a case for Telecommunications to review the device for conditional approval. In the event the device is not approved and an end user still wants it, the end user will be required to sign a waiver confirming understanding that the University will offer best effort support of the devices. University-issued devices will be configured by CIS and will have active-synch enabled. The University reserves the right to push policies to mobile devices and to remotely reset devices.",
-    "ACCEPT-AND-CONTINUE": "Accept and Continue"
+    "ACCEPT-AND-CONTINUE": "Accept and Continue",
+    "ENTER-OTP": "Enter OTP",
+    "WE-SENT-MAIL": "WE HAVE SENT AN EMAIL TO YOUR EMAIL ADDRESS",
+    "RESEND": "RESEND THE CODE",
+    "SELECT-SERVICE": "Select the services you use from stc",
+    "FIXED-LINES": "Fixed Lines",
+    "MOBILE-LINES": "Mobile Lines",
+    "ADSL-DATA": "ADSL Data",
+    "DEVICES": "Devices",
+    "SELECT-FROM-LIST": "Select from the below list",
+    "DONE": "Done",
+    "SKIP": "Skip this step",
+    "ARE-YOU-SURE": "Are you sure!",
+    "INVITATION-REJECT": "Do you want to reject the invitation?",
+    "EXIT-NO-RETURN": "Once you exit you can’t join again.",
+    "CONFIRM": "CONFIRM"
 }
   

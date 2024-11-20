@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
+import { UserData } from '../../interfaces/user-data';
 
 @Component({
   selector: 'invitation-page',
@@ -11,9 +12,10 @@ export class InvitationPageComponent implements OnInit {
   otpVisible: boolean = false;
   rejectVisible: boolean = false;
   serviceVisible: boolean = false;
-  value: string = '';
   otpForm!: FormGroup;
   servicesForm!: FormGroup;
+  rejectionForm!: FormGroup;
+  user!: UserData;
 
   constructor(public translate: TranslateService) {}
 
@@ -22,15 +24,30 @@ export class InvitationPageComponent implements OnInit {
       otp: new FormControl(''),
     });
 
-    // this.otpForm
-    //   .get('otp')
-    //   ?.valueChanges.subscribe((value) => console.log(value));
-
     this.servicesForm = new FormGroup({
       services: new FormControl(null),
     });
 
-    // this.servicesForm.valueChanges.subscribe((value) => console.log(value));
+    this.rejectionForm = new FormGroup({
+      feedback: new FormControl(''),
+    });
+
+    this.getUserData();
+  }
+
+  getUserData(): void {
+    this.user = {
+      inviter: {
+        name: 'Naser Mohamed A Almuhawwis',
+        position: 'Solution and Technologies Section Manager',
+      },
+      userName: '',
+      userMail: 'ree..........@stc.com.sa',
+    };
+  }
+
+  sendFeedback(): void {
+    console.log(this.rejectionForm.get('feedback')?.value);
   }
 
   sendServices(): void {

@@ -14,6 +14,7 @@ import { InvitationPageComponent } from './pages/invitation-page/invitation-page
 import { InvitationExpiredPageComponent } from './pages/invitation-expired-page/invitation-expired-page.component';
 import { TermsPageComponent } from './pages/terms-page/terms-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     InputOtpModule,
     ReactiveFormsModule,
     CheckboxModule,
+    InputTextareaModule,
   ],
 })
 export class AuthModule {}

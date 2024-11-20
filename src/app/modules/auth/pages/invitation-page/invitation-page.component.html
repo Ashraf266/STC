@@ -25,13 +25,12 @@
               />
             </div>
             <div>
-              <h3 class="mt-0 mb-2 text-primary">Naser Mohamed A Almuhawwis</h3>
+              <h3 class="mt-0 mb-2 text-primary">{{ user.inviter.name }}</h3>
               <p class="mb-2 mt-0 pt-1 text-sm">
-                Solution and Technologies Section Manager
+                {{ user.inviter.position }}
               </p>
               <a
-                href="#"
-                class="no-underline flex align-items-center text-secondary text-semibold-sm"
+                class="no-underline flex align-items-center text-secondary text-semibold-sm cursor-pointer"
                 >{{ "SEE-PROFILE" | translate }}
                 <i
                   class="pi"
@@ -67,102 +66,147 @@
       </div>
     </div>
   </div>
-</section>
 
-<p-dialog
-  [modal]="true"
-  [(visible)]="otpVisible"
-  class="border-noround"
-  [style]="{ width: '560px' }"
->
-  <div
-    [ngClass]="{ rtl: translate.currentLang === 'ar' }"
-    [formGroup]="otpForm"
+  <p-dialog
+    [modal]="true"
+    [(visible)]="otpVisible"
+    class="border-noround"
+    [style]="{ width: '560px' }"
   >
-    <h2 class="text-black text-bold-md">Enter OTP</h2>
-    <p class="text-grey text-normal-sm-1">
-      WE HAVE SENT AN EMAIL TO YOUR EMAIL ADDRESS<br />
-      <span class="text-bold-xs-2">ree..........&#64;stc.com.sa</span>
-    </p>
+    <div class="otp-input" [formGroup]="otpForm">
+      <h2 class="text-black text-bold-md">{{ "ENTER-OTP" | translate }}</h2>
+      <p class="text-grey text-normal-sm-1">
+        {{ "WE-SENT-MAIL" | translate }}<br />
+        <span class="text-bold-xs-2">{{ user.userMail }}</span>
+      </p>
 
-    <p-inputOtp
-      class="justify-content-center my-6"
-      [ngClass]="{ 'input-error': !otpVerfication() }"
-      formControlName="otp"
-    />
+      <p-inputOtp
+        class="justify-content-center my-6 ltr"
+        [ngClass]="{ 'input-error': !otpVerfication() }"
+        formControlName="otp"
+      />
 
-    <p class="text-secondary cursor-pointer mb-8 text-bold-xs-1">
-      RESEND THE CODE
-    </p>
+      <p class="text-secondary cursor-pointer mb-8 text-bold-xs-1">
+        {{ "RESEND" | translate }}
+      </p>
 
-    <p-button
-      styleClass="bg-secondary border-none border-noround block w-full text-bold-xs-1"
-      label="VERIFY THE ACCOUNT"
-      (onClick)="showService()"
-      [disabled]="!otpVerfication() && false"
-    />
-  </div>
-</p-dialog>
+      <p-button
+        styleClass="bg-secondary border-none border-noround block w-full text-bold-xs-1"
+        label="VERIFY THE ACCOUNT"
+        (onClick)="showService()"
+        [disabled]="!otpVerfication()"
+      />
+    </div>
+  </p-dialog>
 
-<p-dialog
-  [modal]="true"
-  [(visible)]="serviceVisible"
-  class="border-noround"
-  [style]="{ width: '560px' }"
->
-  <div [ngClass]="{ rtl: translate.currentLang === 'ar' }">
-    <h2 class="text-black text-bold-md mb-0">
-      Selec the services you use from stc
-    </h2>
-    <p class="text-grey text-normal-sm-1">Select from the below list</p>
+  <p-dialog
+    [modal]="true"
+    [(visible)]="serviceVisible"
+    class="border-noround"
+    [style]="{ width: '560px' }"
+  >
+    <div [ngClass]="{ rtl: translate.currentLang === 'ar' }">
+      <h2 class="text-black text-bold-md mb-0">
+        {{ "SELECT-SERVICE" | translate }}
+      </h2>
+      <p class="text-grey text-normal-sm-1">
+        {{ "SELECT-FROM-LIST" | translate }}
+      </p>
 
-    <div class="mt-4 mb-7" [formGroup]="servicesForm">
-      <div class="mb-4">
-        <p-checkbox  value="fixed" inputId="fl" class="mx-3" formControlName="services"/>
-        <label for="fl" class="text-semibold-sm">Fixed Lines</label>
+      <div class="mt-4 mb-7" [formGroup]="servicesForm">
+        <div class="mb-4">
+          <p-checkbox
+            value="fixed"
+            inputId="fl"
+            class="mx-3"
+            formControlName="services"
+          />
+          <label for="fl" class="text-semibold-sm">{{
+            "FIXED-LINES" | translate
+          }}</label>
+        </div>
+        <div class="mb-4">
+          <p-checkbox
+            value="mobile"
+            inputId="ml"
+            class="mx-3"
+            formControlName="services"
+          />
+          <label for="ml" class="text-semibold-sm">{{
+            "MOBILE-LINES" | translate
+          }}</label>
+        </div>
+        <div class="mb-4">
+          <p-checkbox
+            value="adsl"
+            inputId="adsl"
+            class="mx-3"
+            formControlName="services"
+          />
+          <label for="adsl" class="text-semibold-sm">{{
+            "ADSL-DATA" | translate
+          }}</label>
+        </div>
+        <div class="mb-4">
+          <p-checkbox
+            value="devices"
+            inputId="devices"
+            class="mx-3"
+            formControlName="services"
+          />
+          <label for="devices" class="text-semibold-sm">{{
+            "DEVICES" | translate
+          }}</label>
+        </div>
       </div>
-      <div class="mb-4">
-        <p-checkbox  value="mobile" inputId="ml" class="mx-3" formControlName="services"/>
-        <label for="ml" class="text-semibold-sm">Mobile Lines</label>
-      </div>
-      <div class="mb-4">
-        <p-checkbox  value="adsl" inputId="adsl" class="mx-3" formControlName="services"/>
-        <label for="adsl" class="text-semibold-sm">ADSL Data</label>
-      </div>
-      <div class="mb-4">
-        <p-checkbox  value="devices" inputId="devices" class="mx-3" formControlName="services"/>
-        <label for="devices" class="text-semibold-sm">Devices</label>
+
+      <p-button
+        styleClass="bg-secondary border-none border-noround block w-full text-bold-xs-1"
+        label="{{ 'DONE' | translate }}"
+        routerLink="/terms"
+        (onClick)="sendServices()"
+      />
+
+      <a
+        routerLink="/terms"
+        class="text-black block text-center mt-4 text-semibold-sm-1"
+        >{{ "SKIP" | translate }}</a
+      >
+    </div>
+  </p-dialog>
+
+  <p-dialog
+    [modal]="true"
+    [(visible)]="rejectVisible"
+    class="border-noround"
+    [style]="{ width: '560px' }"
+  >
+    <div [formGroup]="rejectionForm">
+      <h2 class="text-black text-bold-md mb-5 mt-0">
+        {{ "ARE-YOU-SURE" | translate }}
+      </h2>
+      <p class="text-grey text-normal-sm-1">
+        {{ "INVITATION-REJECT" | translate }}<br />
+        {{ "EXIT-NO-RETURN" | translate }}
+      </p>
+
+      <textarea
+        rows="8"
+        cols="30"
+        pInputTextarea
+        [autoResize]="false"
+        formControlName="feedback"
+        class="text-area block w-11 mx-auto mb-7 mt-5"
+      ></textarea>
+
+      <div class="flex justify-content-end">
+        <p-button
+          styleClass="bg-secondary border-none border-noround block text-bold-xs-1"
+          label="{{ 'CONFIRM' | translate }}"
+          routerLink="/invitation-expired"
+          (onClick)="sendFeedback()"
+        />
       </div>
     </div>
-
-    <p-button
-      styleClass="bg-secondary border-none border-noround block w-full text-bold-xs-1"
-      label="Done"
-      routerLink="/terms"
-      (onClick)="sendServices()"
-    />
-
-    <a
-      routerLink="/terms"
-      class="text-black block text-center mt-4 text-semibold-sm-1"
-      >Skip this step</a
-    >
-  </div>
-</p-dialog>
-
-<p-dialog
-  [modal]="true"
-  [(visible)]="rejectVisible"
-  class="border-noround"
-  [style]="{ width: '560px' }"
->
-  <div [ngClass]="{ rtl: translate.currentLang === 'ar' }">
-    <h2 class="text-black">Are you sure!</h2>
-
-    <p-button
-      styleClass="bg-secondary border-none"
-      label="route"
-      routerLink="/invitation-expired"
-    />
-  </div>
-</p-dialog>
+  </p-dialog>
+</section>

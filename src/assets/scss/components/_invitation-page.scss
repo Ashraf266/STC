@@ -9,55 +9,60 @@
     border-top: 40px solid $primary-color;
     border-bottom: 40px solid $primary-color;
   }
-  p-card{
-    h2{
+  p-card {
+    h2 {
       margin-inline-start: calc(97px + 2rem);
     }
   }
 
-  
-}
+  .otp-input {
+    .p-dialog .p-dialog-content {
+      color: unset;
+      padding: 0 64px 64px;
+    }
 
-.p-dialog .p-dialog-content {
-  color: unset;
-  padding: 0 64px 64px;
-}
+    .p-inputtext {
+      width: 80px;
+      height: 80px;
+      padding: 0;
+      border: none;
+      color: black;
+      border-radius: 0;
+      border-bottom: 3px solid $light-green;
+      background-color: #d8d8d833;
+      margin-inline: 10px;
 
-.p-inputtext{
-  width: 80px;
-  height: 80px;
-  padding: 0;
-  border: none;
-  color: black;
-  border-radius: 0;
-  border-bottom: 3px solid $light-green;
-  background-color: #D8D8D833;
-  margin-inline: 10px;
+      @extend .text-bold-lg;
+    }
 
-  @extend .text-bold-lg;
-}
+    .input-error .p-inputtext {
+      border-color: $secondary-color;
+    }
+  }
 
-.input-error .p-inputtext{
-  border-color: $secondary-color;
-}
-
-.p-checkbox .p-checkbox-box {
-  border: 3px solid $primary-color;
-  background: #ffffff;
-  width: 22px;
-  height: 22px;
-  color: white;
-  border-radius: 0;
-  transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
-  outline-color: transparent;
-}
-
-.p-checkbox .p-checkbox-box.p-highlight {
-  border-color: $primary-color;
-  background: $primary-color;
-  border-radius: 5px;
-
-  .p-icon {
+  .p-checkbox .p-checkbox-box {
+    border: 3px solid $primary-color;
+    background: #ffffff;
+    width: 22px;
+    height: 22px;
     color: white;
-}
+    border-radius: 0;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s,
+      box-shadow 0.2s;
+    outline-color: transparent;
+  }
+
+  .p-checkbox .p-checkbox-box.p-highlight {
+    border-color: $primary-color;
+    background: $primary-color;
+    border-radius: 5px;
+
+    .p-icon {
+      color: white;
+    }
+  }
+
+  .text-area{
+    resize: none;
+  }
 }
