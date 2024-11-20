@@ -23,9 +23,10 @@ export class loggedInGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
+    this.loggedInState = !!Number(localStorage.getItem('login-state'));
     if (!this.loggedInState) {
-      alert('Not Logged in');
-      this.router.navigate(['/invitation']);
+      alert(`You are not authenticated!`);
+      this.router.navigate(['auth/invitation']);
       return false;
     }
     return true;

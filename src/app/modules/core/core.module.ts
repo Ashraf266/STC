@@ -5,6 +5,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { LayoutComponent } from './layout/layout.component';
+import { RouterModule } from '@angular/router';
 
 // Factory function for translation loader
 export function HttpLoaderFactory(http: HttpClient) {
@@ -23,6 +24,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient],
       },
     }),
+    RouterModule
   ],
   providers: [],
 })

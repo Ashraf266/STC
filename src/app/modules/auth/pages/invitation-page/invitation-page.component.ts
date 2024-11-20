@@ -25,7 +25,7 @@ export class InvitationPageComponent implements OnInit {
     });
 
     this.servicesForm = new FormGroup({
-      services: new FormControl(null),
+      services: new FormControl(['fixed']),
     });
 
     this.rejectionForm = new FormGroup({

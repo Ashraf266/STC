@@ -15,6 +15,7 @@ import { InvitationExpiredPageComponent } from './pages/invitation-expired-page/
 import { TermsPageComponent } from './pages/terms-page/terms-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { AuthPageComponent } from './pages/auth-page/auth-page.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
     EmptyNavComponent,
     TermsPageComponent,
     InvitationExpiredPageComponent,
+    AuthPageComponent,
   ],
   imports: [
     CommonModule,

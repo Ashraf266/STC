@@ -1,10 +1,9 @@
-<section class="h-screen" [ngClass]="{ rtl: translate.currentLang === 'ar' }">
-  <empty-nav></empty-nav>
+<section>
   <div class="mt-7">
     <div class="flex align-items-center mx-6">
       <a
         routerLink="/invitation"
-        class="text-secondary  text-semibold-md no-underline"
+        class="text-secondary text-semibold-md no-underline"
         >{{ "ACCEPT-INVITATION" | translate }}</a
       >
       <i
@@ -14,7 +13,7 @@
         'pi-angle-right': translate.currentLang !== 'ar',
       }"
       ></i>
-      <a class="text-grey  text-semibold-md">{{ "ACCEPT-TERMS" | translate }}</a>
+      <a class="text-grey text-semibold-md">{{ "ACCEPT-TERMS" | translate }}</a>
     </div>
 
     <div class="p-7 mt-6 bg-light-grey w-10 mx-auto">
@@ -24,7 +23,9 @@
       </p>
 
       <div>
-        <h3 class="text-semibold-md-1">{{ "CONFIDENTIALS-TITLE" | translate }}</h3>
+        <h3 class="text-semibold-md-1">
+          {{ "CONFIDENTIALS-TITLE" | translate }}
+        </h3>
         <p class="text-normal-sm">
           {{ "CONFIDENTIALS-CONTENT-1" | translate }}
         </p>
@@ -54,8 +55,9 @@
     <div class="flex justify-content-end py-8 w-11 mx-auto px-5">
       <p-button
         styleClass="bg-secondary border-none border-noround text-bold-xs-1"
-        label="{{'ACCEPT-AND-CONTINUE' | translate}}"
-        routerLink="/invitation-expired"
+        label="{{ 'ACCEPT-AND-CONTINUE' | translate }}"
+        (onClick)="logIn()"
+        routerLink=""
       />
     </div>
   </div>

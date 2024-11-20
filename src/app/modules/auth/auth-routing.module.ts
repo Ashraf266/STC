@@ -3,15 +3,28 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InvitationExpiredPageComponent } from './pages/invitation-expired-page/invitation-expired-page.component';
 import { TermsPageComponent } from './pages/terms-page/terms-page.component';
+import { AuthPageComponent } from './pages/auth-page/auth-page.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
-  {path: 'invitation', component: InvitationPageComponent},
-  {path: 'invitation-expired', component: InvitationExpiredPageComponent},
-  {path: 'terms', component: TermsPageComponent},
+  {
+    path: 'auth',
+    component: AuthPageComponent,
+    canActivate: [AuthGuard],
+    children: [
+      { path: '', redirectTo: 'invitation', pathMatch: 'full' },
+      { path: 'invitation', component: InvitationPageComponent },
+      {
+        path: 'invitation-expired',
+        component: InvitationExpiredPageComponent,
+      },
+      { path: 'terms', component: TermsPageComponent },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AuthRoutingModule { }
+export class AuthRoutingModule {}

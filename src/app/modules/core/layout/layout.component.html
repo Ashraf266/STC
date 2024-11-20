@@ -1,7 +1,7 @@
-<h1>{{ 'HELLO' | translate }}</h1>
+<h1>{{ 'DONE' | translate }}</h1>
 <p>{{ 'WELCOME' | translate }}</p>
 
 <!-- Language Switcher -->
 <button (click)="translate.use('en')">English</button>
 <button (click)="translate.use('ar')">Arabic</button>
-
+<router-outlet></router-outlet>
