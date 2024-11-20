@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './modules/core/layout/layout.component';
 import { loggedInGuard } from './modules/core/guards/logged-in.guard';
-import { HomePageComponent } from './modules/home/pages/home-page/home-page.component';
 
 const routes: Routes = [
   {

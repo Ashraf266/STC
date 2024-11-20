@@ -1,9 +1,12 @@
 @use "../utils" as *;
 
-.invitation-page {
+section:has(.invitation-page) {
   background-image: url("../../images/invitation-bg.png");
   background-size: cover;
   background-position: center;
+}
+
+.invitation-page {
   .invitation-image {
     max-width: 460px;
     border-top: 40px solid $primary-color;
@@ -62,7 +65,7 @@
     }
   }
 
-  .text-area{
+  .text-area {
     resize: none;
   }
 }
