@@ -78,6 +78,7 @@
 
       <p-inputOtp
         class="justify-content-center my-6 ltr"
+        [integerOnly]="true"
         [ngClass]="{ 'input-error': !otpVerfication() }"
         formControlName="otp"
       />
