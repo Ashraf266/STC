@@ -8,17 +8,17 @@ import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
-    path: 'auth',
+    path: '',
     component: AuthPageComponent,
     canActivate: [AuthGuard],
     children: [
-      { path: '', redirectTo: 'invitation', pathMatch: 'full' },
       { path: 'invitation', component: InvitationPageComponent },
       {
         path: 'invitation-expired',
         component: InvitationExpiredPageComponent,
       },
       { path: 'terms', component: TermsPageComponent },
+      { path: '', redirectTo: 'invitation', pathMatch: 'full' },
     ],
   },
 ];

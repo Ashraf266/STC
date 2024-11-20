@@ -4,7 +4,6 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateModule } from '@ngx-translate/core';
 import { InputOtpModule } from 'primeng/inputotp';
 import { CheckboxModule } from 'primeng/checkbox';
@@ -31,7 +30,6 @@ import { AuthPageComponent } from './pages/auth-page/auth-page.component';
     CardModule,
     ButtonModule,
     DialogModule,
-    BrowserAnimationsModule,
     TranslateModule,
     InputOtpModule,
     ReactiveFormsModule,

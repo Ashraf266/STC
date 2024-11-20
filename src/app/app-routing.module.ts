@@ -10,14 +10,18 @@ const routes: Routes = [
     component: LayoutComponent,
     canActivate: [loggedInGuard],
     children: [
-      { path: '', redirectTo: 'home', pathMatch: 'full' },
       {
         path: 'home',
-        component: HomePageComponent,
         loadChildren: () =>
           import('./modules/home/home.module').then((m) => m.HomeModule),
       },
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
     ],
+  },
+  {
+    path: 'auth',
+    loadChildren: () =>
+      import('./modules/auth/auth.module').then((m) => m.AuthModule),
   },
 ];
 
