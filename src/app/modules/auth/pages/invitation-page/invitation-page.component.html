@@ -1,0 +1,168 @@
+<section
+  class="h-screen invitation-page"
+  [ngClass]="{ rtl: translate.currentLang === 'ar' }"
+>
+  <empty-nav></empty-nav>
+  <div class="px-4 pt-8">
+    <div class="grid align-items-center justify-content-center">
+      <div
+        class="lg:col-7 col-12 lg:mb-0 mb-5"
+        [ngClass]="{
+        'lg:pl-6': translate.currentLang === 'ar',
+        'lg:pr-6': translate.currentLang !== 'ar',
+      }"
+      >
+        <p-card styleClass="border-round-2xl px-3">
+          <h2 class="text-black text-bold-sm">
+            {{ "INVITATION" | translate }}
+          </h2>
+          <div class="flex align-items-start mb-6">
+            <div>
+              <img
+                src="/assets/images/avatar-0.png"
+                alt="avatar"
+                class="mx-3 avatar-lg"
+              />
+            </div>
+            <div>
+              <h3 class="mt-0 mb-2 text-primary">Naser Mohamed A Almuhawwis</h3>
+              <p class="mb-2 mt-0 pt-1 text-sm">
+                Solution and Technologies Section Manager
+              </p>
+              <a
+                href="#"
+                class="no-underline flex align-items-center text-secondary text-semibold-sm"
+                >{{ "SEE-PROFILE" | translate }}
+                <i
+                  class="pi"
+                  [ngClass]="{
+                  'pi-angle-left': translate.currentLang === 'ar',
+                  'pi-angle-right': translate.currentLang !== 'ar',
+                }"
+                ></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="flex justify-content-end align-items-center">
+            <a
+              (click)="showReject()"
+              class="no-underline mx-3 text-black cursor-pointer text-normal"
+              >{{ "INTERESTED" | translate }}</a
+            >
+            <p-button
+              styleClass="bg-secondary border-none text-normal-1"
+              label="{{ 'ACCEPT-INVITATION' | translate }}"
+              (onClick)="showOTP()"
+            />
+          </div>
+        </p-card>
+      </div>
+      <div class="lg:col-4 col-12 invitation-image p-0">
+        <img
+          src="/assets/images/invitation.png"
+          alt="invitation image"
+          class="block w-full"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<p-dialog
+  [modal]="true"
+  [(visible)]="otpVisible"
+  class="border-noround"
+  [style]="{ width: '560px' }"
+>
+  <div
+    [ngClass]="{ rtl: translate.currentLang === 'ar' }"
+    [formGroup]="otpForm"
+  >
+    <h2 class="text-black text-bold-md">Enter OTP</h2>
+    <p class="text-grey text-normal-sm-1">
+      WE HAVE SENT AN EMAIL TO YOUR EMAIL ADDRESS<br />
+      <span class="text-bold-xs-2">ree..........&#64;stc.com.sa</span>
+    </p>
+
+    <p-inputOtp
+      class="justify-content-center my-6"
+      [ngClass]="{ 'input-error': !otpVerfication() }"
+      formControlName="otp"
+    />
+
+    <p class="text-secondary cursor-pointer mb-8 text-bold-xs-1">
+      RESEND THE CODE
+    </p>
+
+    <p-button
+      styleClass="bg-secondary border-none border-noround block w-full text-bold-xs-1"
+      label="VERIFY THE ACCOUNT"
+      (onClick)="showService()"
+      [disabled]="!otpVerfication() && false"
+    />
+  </div>
+</p-dialog>
+
+<p-dialog
+  [modal]="true"
+  [(visible)]="serviceVisible"
+  class="border-noround"
+  [style]="{ width: '560px' }"
+>
+  <div [ngClass]="{ rtl: translate.currentLang === 'ar' }">
+    <h2 class="text-black text-bold-md mb-0">
+      Selec the services you use from stc
+    </h2>
+    <p class="text-grey text-normal-sm-1">Select from the below list</p>
+
+    <div class="mt-4 mb-7" [formGroup]="servicesForm">
+      <div class="mb-4">
+        <p-checkbox  value="fixed" inputId="fl" class="mx-3" formControlName="services"/>
+        <label for="fl" class="text-semibold-sm">Fixed Lines</label>
+      </div>
+      <div class="mb-4">
+        <p-checkbox  value="mobile" inputId="ml" class="mx-3" formControlName="services"/>
+        <label for="ml" class="text-semibold-sm">Mobile Lines</label>
+      </div>
+      <div class="mb-4">
+        <p-checkbox  value="adsl" inputId="adsl" class="mx-3" formControlName="services"/>
+        <label for="adsl" class="text-semibold-sm">ADSL Data</label>
+      </div>
+      <div class="mb-4">
+        <p-checkbox  value="devices" inputId="devices" class="mx-3" formControlName="services"/>
+        <label for="devices" class="text-semibold-sm">Devices</label>
+      </div>
+    </div>
+
+    <p-button
+      styleClass="bg-secondary border-none border-noround block w-full text-bold-xs-1"
+      label="Done"
+      routerLink="/terms"
+      (onClick)="sendServices()"
+    />
+
+    <a
+      routerLink="/terms"
+      class="text-black block text-center mt-4 text-semibold-sm-1"
+      >Skip this step</a
+    >
+  </div>
+</p-dialog>
+
+<p-dialog
+  [modal]="true"
+  [(visible)]="rejectVisible"
+  class="border-noround"
+  [style]="{ width: '560px' }"
+>
+  <div [ngClass]="{ rtl: translate.currentLang === 'ar' }">
+    <h2 class="text-black">Are you sure!</h2>
+
+    <p-button
+      styleClass="bg-secondary border-none"
+      label="route"
+      routerLink="/invitation-expired"
+    />
+  </div>
+</p-dialog>

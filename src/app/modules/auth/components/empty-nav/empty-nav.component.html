@@ -1,0 +1,14 @@
+<nav class="bg-primary flex align-items-center justify-content-between">
+  <object
+    data="/assets/svgs/logo.svg"
+    type="image/svg+xml"
+    class="mx-5 my-3"
+  ></object>
+  <p
+    (click)="changeLanguage()"
+    class="flex align-items-center px-4 cursor-pointer text-bold-xs"
+  >
+    {{ "OTHER-LANG" | translate }}
+    <img class="px-2" src="/assets/svgs/lang.svg" />
+  </p>
+</nav>

@@ -1,0 +1,16 @@
+<section
+  class="h-screen expired-page"
+  [ngClass]="{ rtl: translate.currentLang === 'ar' }"
+>
+  <empty-nav></empty-nav>
+  <div class="flex justify-content-center align-items-center flex-column relative">
+    <img class="error-gif" src="/assets/images/error.gif" alt="Not Found GIF" />
+    <div class="error-text absolute">
+      <h2 class="text-center text-secondary text-semibold-lg mb-2">
+        {{"WHOOPS" | translate}}<br />
+        {{"INVITATION-EXPIRED" | translate}}
+      </h2>
+      <p class="text-grey text-normal-lg m-0">{{"EXPIRATION-REASON" | translate}}</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,62 @@
+<section class="h-screen" [ngClass]="{ rtl: translate.currentLang === 'ar' }">
+  <empty-nav></empty-nav>
+  <div class="mt-7">
+    <div class="flex align-items-center mx-6">
+      <a
+        routerLink="/invitation"
+        class="text-secondary  text-semibold-md no-underline"
+        >{{ "ACCEPT-INVITATION" | translate }}</a
+      >
+      <i
+        class="pi text-grey mx-1"
+        [ngClass]="{
+        'pi-angle-left': translate.currentLang === 'ar',
+        'pi-angle-right': translate.currentLang !== 'ar',
+      }"
+      ></i>
+      <a class="text-grey  text-semibold-md">{{ "ACCEPT-TERMS" | translate }}</a>
+    </div>
+
+    <div class="p-7 mt-6 bg-light-grey w-10 mx-auto">
+      <h2 class="text-normal-xl my-0">{{ "ACCEPT-TERMS" | translate }}</h2>
+      <p class="text-grey">
+        {{ "READ-AND-ACCEPT" | translate }}
+      </p>
+
+      <div>
+        <h3 class="text-semibold-md-1">{{ "CONFIDENTIALS-TITLE" | translate }}</h3>
+        <p class="text-normal-sm">
+          {{ "CONFIDENTIALS-CONTENT-1" | translate }}
+        </p>
+        <p class="text-normal-sm">
+          {{ "CONFIDENTIALS-CONTENT-2" | translate }}
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-semibold-md-1">{{ "EXCLUSIONS-TITLE" | translate }}</h3>
+        <p class="text-normal-sm">
+          {{ "EXCLUSIONS-CONTENT-1" | translate }}
+        </p>
+        <p class="text-normal-sm">
+          {{ "EXCLUSIONS-CONTENT-2" | translate }}
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-semibold-md-1">{{ "USE-TITLE" | translate }}</h3>
+        <p class="text-normal-sm">
+          {{ "USE-CONTENT" | translate }}
+        </p>
+      </div>
+    </div>
+
+    <div class="flex justify-content-end py-8 w-11 mx-auto px-5">
+      <p-button
+        styleClass="bg-secondary border-none border-noround text-bold-xs-1"
+        label="{{'ACCEPT-AND-CONTINUE' | translate}}"
+        routerLink="/invitation-expired"
+      />
+    </div>
+  </div>
+</section>

@@ -1,1 +1,19 @@
 @use "variables" as *;
+
+$color-map: (
+  "secondary": $secondary-color,
+  "black": black,
+  "grey": $grey-color,
+  "light-grey": $light-grey-color,
+  "light-green": $light-green
+);
+
+@each $name, $value in $color-map {
+  .text-#{$name} {
+    color: $value;
+  }
+
+  .bg-#{$name} {
+    background-color: $value;
+  }
+}
