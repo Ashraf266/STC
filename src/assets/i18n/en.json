@@ -1,38 +1,73 @@
 {
-    "OTHER-LANG": "العربية",
-    "INVITATION": "You are invited by",
-    "SEE-PROFILE": "See profile",
-    "INTERESTED": "Not interested?",
-    "ACCEPT-INVITATION": "Accept Invitation",
-    "WHOOPS": "Whoops!",
-    "INVITATION-EXPIRED": "Your invitaion has expired",
-    "EXPIRATION-REASON": "Your invitaion has expired due to your inactivity",
-    "ACCEPT-TERMS": "Accept Terms & Conditions",
-    "READ-AND-ACCEPT": "Read and Accept the Terms & Conditions for continue to proceed.",
-    "CONFIDENTIALS-TITLE": "1. Confidential",
-    "CONFIDENTIALS-CONTENT-1": "Access and use of University-issued devices is a privilege that is granted in connection with an individual's duties to the University. These devices are to be used for conducting University business and/or in furtherance of the educational mission of the University. Requests for University-paid services require approval by an authorized department representative and the Provost's Office.",
-    "CONFIDENTIALS-CONTENT-2": "Telecommunications will select a small number of approved devices. These devices have been tested for compatibility with the most common Brown applications and Brown WiFi. Should an end user desire a device/feature/service that is not available on one of the approved devices, the end user may present a case for Telecommunications to review the device for conditional approval. In the event the device is not approved and an end user still wants it, the end user will be required to sign a waiver confirming understanding that the University will offer best effort support of the devices. University-issued devices will be configured by CIS and will have active-synch enabled. The University reserves the right to push policies to mobile devices and to remotely reset devices. Any attempt to override University policies, i.e., Jailbreak a University-issued device, or any other action that violates manufacturer's warranty or Brown's agreement with carriers is prohibited.",
-    "EXCLUSIONS-TITLE": "2. Exclusions",
-    "EXCLUSIONS-CONTENT-1": "Requests for University-paid services require approval by an authorized department representative and the Provost's Office.",
-    "EXCLUSIONS-CONTENT-2": "These devices have been tested for compatibility with the most common Brown applications and Brown WiFi. Should an end user desire a device/feature/service that is not available on one of the approved devices, the end user may present a case for Telecommunications to review the device for conditional approval. In the event the device is not approved and an end user still wants it, the end user will be required to sign a waiver confirming understanding that the University will offer best effort support of the devices. University-issued devices will be configured by CIS and will have active-synch enabled. The University reserves the right to push policies to mobile devices and to remotely reset devices. Any attempt to override University policies, i.e., Jailbreak a University-issued device, or any other action that violates manufacturer's warranty or Brown's agreement with carriers is prohibited.",
-    "USE-TITLE": "3. Use",
-    "USE-CONTENT": "Brown applications and Brown WiFi. Should an end user desire a device/feature/service that is not available on one of the approved devices, the end user may present a case for Telecommunications to review the device for conditional approval. In the event the device is not approved and an end user still wants it, the end user will be required to sign a waiver confirming understanding that the University will offer best effort support of the devices. University-issued devices will be configured by CIS and will have active-synch enabled. The University reserves the right to push policies to mobile devices and to remotely reset devices.",
-    "ACCEPT-AND-CONTINUE": "Accept and Continue",
-    "ENTER-OTP": "Enter OTP",
-    "WE-SENT-MAIL": "WE HAVE SENT AN EMAIL TO YOUR EMAIL ADDRESS",
-    "RESEND": "RESEND THE CODE",
-    "SELECT-SERVICE": "Select the services you use from stc",
-    "FIXED-LINES": "Fixed Lines",
-    "MOBILE-LINES": "Mobile Lines",
-    "ADSL-DATA": "ADSL Data",
-    "DEVICES": "Devices",
-    "SELECT-FROM-LIST": "Select from the below list",
-    "DONE": "Done",
-    "SKIP": "Skip this step",
-    "ARE-YOU-SURE": "Are you sure!",
-    "INVITATION-REJECT": "Do you want to reject the invitation?",
-    "EXIT-NO-RETURN": "Once you exit you can’t join again.",
-    "CONFIRM": "CONFIRM",
-    "VERIFY": "VERIFY THE ACCOUNT"
-}
+    "LANGUAGE": {
+      "OTHER_LANG": "العربية"
+    },
+    "AUTH": {
+      "INVITATION": {
+        "MESSAGE": "You are invited by",
+        "SEE_PROFILE": "See profile",
+        "NOT_INTERESTED": "Not interested?",
+        "ACCEPT": "Accept Invitation",
+        "REJECT": {
+          "CONFIRM_TITLE": "Are you sure!",
+          "CONFIRM_MESSAGE": "Do you want to reject the invitation?",
+          "EXIT_WARNING": "Once you exit you can’t join again.",
+          "CONFIRM": "CONFIRM"
+        }
+      },
+      "EXPIRED": {
+        "TITLE": "Whoops!",
+        "MESSAGE": "Your invitation has expired",
+        "REASON": "Your invitation has expired due to your inactivity"
+      },
+      "TERMS": {
+        "ACCEPT": "Accept Terms & Conditions",
+        "READ_AND_ACCEPT": "Read and Accept the Terms & Conditions for continue to proceed.",
+        "SECTIONS": {
+          "CONFIDENTIALS": {
+            "TITLE": "1. Confidential",
+            "CONTENT_1": 
+              "Access and use of University-issued devices is a privilege that is granted in connection with an individual's duties to the University. These devices are to be used for conducting University business and/or in furtherance of the educational mission of the University. Requests for University-paid services require approval by an authorized department representative and the Provost's Office.",
+            "CONTENT_2": 
+              "Telecommunications will select a small number of approved devices. These devices have been tested for compatibility with the most common Brown applications and Brown WiFi. Should an end user desire a device/feature/service that is not available on one of the approved devices, the end user may present a case for Telecommunications to review the device for conditional approval. In the event the device is not approved and an end user still wants it, the end user will be required to sign a waiver confirming understanding that the University will offer best effort support of the devices. University-issued devices will be configured by CIS and will have active-synch enabled. The University reserves the right to push policies to mobile devices and to remotely reset devices. Any attempt to override University policies, i.e., Jailbreak a University-issued device, or any other action that violates manufacturer's warranty or Brown's agreement with carriers is prohibited."
+            
+          },
+          "EXCLUSIONS": {
+            "TITLE": "2. Exclusions",
+            "CONTENT_1": 
+              "Requests for University-paid services require approval by an authorized department representative and the Provost's Office.",
+            
+            "CONTENT_2": 
+              "These devices have been tested for compatibility with the most common Brown applications and Brown WiFi. Should an end user desire a device/feature/service that is not available on one of the approved devices, the end user may present a case for Telecommunications to review the device for conditional approval. In the event the device is not approved and an end user still wants it, the end user will be required to sign a waiver confirming understanding that the University will offer best effort support of the devices. University-issued devices will be configured by CIS and will have active-synch enabled. The University reserves the right to push policies to mobile devices and to remotely reset devices. Any attempt to override University policies, i.e., Jailbreak a University-issued device, or any other action that violates manufacturer's warranty or Brown's agreement with carriers is prohibited."
+            
+          },
+          "USE": {
+            "TITLE": "3. Use",
+            "CONTENT": "Brown applications and Brown WiFi. Should an end user desire a device/feature/service that is not available on one of the approved devices, the end user may present a case for Telecommunications to review the device for conditional approval. In the event the device is not approved and an end user still wants it, the end user will be required to sign a waiver confirming understanding that the University will offer best effort support of the devices. University-issued devices will be configured by CIS and will have active-synch enabled. The University reserves the right to push policies to mobile devices and to remotely reset devices."
+          }
+        },
+        "ACCEPT_AND_CONTINUE": "Accept and Continue"
+      },
+      "VERIFICATION": {
+        "OTP": {
+          "ENTER": "Enter OTP",
+          "EMAIL_SENT": "WE HAVE SENT AN EMAIL TO YOUR EMAIL ADDRESS",
+          "RESEND": "RESEND THE CODE"
+        },
+        "VERIFY_ACCOUNT": "VERIFY THE ACCOUNT"
+      },
+      "SERVICES": {
+        "SELECT": "Select the services you use from stc",
+        "OPTIONS": {
+          "FIXED_LINES": "Fixed Lines",
+          "MOBILE_LINES": "Mobile Lines",
+          "ADSL_DATA": "ADSL Data",
+          "DEVICES": "Devices"
+        },
+        "SELECT_FROM_LIST": "Select from the below list",
+        "DONE": "Done",
+        "SKIP": "Skip this step"
+      }
+    }
+  }
   
