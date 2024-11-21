@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './modules/core/layout/layout.component';
-import { loggedInGuard } from './modules/core/guards/logged-in.guard';
+import { loggedInGuard } from './modules/shared/guards/logged-in.guard';
 
 const routes: Routes = [
   {
@@ -13,6 +13,13 @@ const routes: Routes = [
         path: 'home',
         loadChildren: () =>
           import('./modules/home/home.module').then((m) => m.HomeModule),
+      },
+      {
+        path: 'leaderboard',
+        loadChildren: () =>
+          import('./modules/leaderboard/leaderboard.module').then(
+            (m) => m.LeaderboardModule
+          ),
       },
       { path: '', redirectTo: 'home', pathMatch: 'full' },
     ],
