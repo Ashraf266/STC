@@ -68,6 +68,29 @@
         "DONE": "Done",
         "SKIP": "Skip this step"
       }
+    },
+    "LAYOUT": {
+      "SIDEBAR": {
+        "HOME": "Home",
+        "DISCOVER": "Discover Tafani",
+        "COMMUNITY": "Community",
+        "PRODUCTS_AND_SERVICES": "Products & Services",
+        "FEEDBACK": "Feedback",
+        "FAQ": "FAQs",
+        "LEADERBOARD": "Leaderboard"
+      }
+    },
+    "HOME": {
+      "WELCOME": "Welcome,",
+      "VIEW_ACCOUNT": "View Ambassador Account",
+      "VIDEOS": {
+        "HOW": "How-to Videos"
+      },
+      "NAV":{
+        "TREND": "Trend",
+        "TOPICS": "Followed Topics",
+        "NEWS": "Latest News"
+      }
     }
   }
   

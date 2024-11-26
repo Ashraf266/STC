@@ -11,6 +11,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { LayoutComponent } from './layout/layout.component';
 import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 // Factory function for translation loader
 export function HttpLoaderFactory(http: HttpClient) {
@@ -18,7 +19,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [LayoutComponent, NavbarComponent],
+  declarations: [LayoutComponent, NavbarComponent, SidebarComponent],
   imports: [
     CommonModule,
     HttpClientModule,
