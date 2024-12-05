@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { HomeDataService } from '../../services/home-data.service';
+import { Subscription } from 'rxjs';
 
 
 interface Video{
@@ -13,14 +14,19 @@ interface Video{
   templateUrl: './videos.component.html',
   styleUrl: './videos.component.scss',
 })
-export class VideosComponent implements OnInit {
+export class VideosComponent implements OnInit, OnDestroy {
   videos: Video[] = [];
+  serviceSub!: Subscription;
   constructor(private videosService: HomeDataService) {}
 
   ngOnInit(): void {
-    this.videosService.getVideos().subscribe((data) => {
+    this.serviceSub = this.videosService.getVideos().subscribe((data) => {
       this.videos = data.articles.splice(0,3);
       console.log(this.videos);
     });
+  }
+
+  ngOnDestroy(): void {
+      this.serviceSub.unsubscribe();
   }
 }

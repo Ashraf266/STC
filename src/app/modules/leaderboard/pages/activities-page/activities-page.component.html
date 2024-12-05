@@ -1,0 +1,22 @@
+<div class="px-7 py-5">
+  <p class="text-bold-sm-2">{{"LEADERBOARD.GAIN_POINTS" | translate}}</p>
+</div>
+
+<div class="grid px-7">
+    <div class="col-8 shadow-2 mb-8 ltr">
+        <p-table [value]="activities">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th class="text-black bg-white">Activity</th>
+                    <th class="text-black  bg-white">Points</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-activity>
+                <tr>
+                    <td class="text-black">{{ activity.activity }}</td>
+                    <td class="text-primary font-bold">{{ activity.points }} points</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>

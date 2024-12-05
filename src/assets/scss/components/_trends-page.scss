@@ -1,0 +1,8 @@
+@use "../utils" as *;
+
+.trend-post {
+    padding-inline-end: 4rem;
+    .post-content{
+        border-bottom: 2px solid $grey-color-1;
+    }
+}

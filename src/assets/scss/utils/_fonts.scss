@@ -57,6 +57,12 @@ body {
     line-height: 28.8px;
   }
 
+  &-bold-sm-2 {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+
   &-bold-md {
     font-size: 30px;
     font-weight: 700;
@@ -69,10 +75,22 @@ body {
     line-height: 38.4px;
   }
 
+  &-bold-md-2 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 43.4px;
+  }
+
   &-bold-lg {
     font-size: 42px;
     font-weight: 700;
     line-height: 50.4px;
+  }
+
+  &-semibold-xs {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16.8px;
   }
 
   &-semibold-sm {
@@ -93,6 +111,12 @@ body {
     line-height: 24px;
   }
 
+  &-semibold-md-2 {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28.8px;
+  }
+
   &-semibold-md-1 {
     font-size: 32px;
     font-weight: 500;
@@ -103,6 +127,12 @@ body {
     font-size: 48px;
     font-weight: 500;
     line-height: 57.6px;
+  }
+
+  &-normal-xs {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15.65px;
   }
 
   &-normal-sm {
@@ -127,6 +157,12 @@ body {
     font-size: 16px;
     font-weight: 500;
     line-height: 19.2px;
+  }
+
+  &-normal-2 {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26.08px;
   }
 
   &-normal-md {

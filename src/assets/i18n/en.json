@@ -90,7 +90,25 @@
         "TREND": "Trend",
         "TOPICS": "Followed Topics",
         "NEWS": "Latest News"
+      },
+      "TREND": {
+        "QUESTION_ON": "Added a question on",
+        "MEMBER": "Tafani Member"
+        
       }
+    },
+    "LEADERBOARD": {
+      "YOUR_LEADERBOARD": "Your Leaderboard",
+      "DESCRIPTION": "Your verified achievements in the global community can help you get recognized and stand out at your workplace.",
+      "CONGRATS": "Congrats!",
+      "BEGINNER_LEVEL": "You've earned Beginner level",
+      "SHARE_COMMUNITY": "Share in community",
+      "MY_POINTS": "My Points",
+      "POINTS": "points",
+      "LAST_UPDATED": "Last updated on",
+      "ACTIVITIES_POINTS": "Activities and Points",
+      "BADGE_POINTS": "Badge Points",
+      "GAIN_POINTS": "How to gain points?"
     }
   }
   

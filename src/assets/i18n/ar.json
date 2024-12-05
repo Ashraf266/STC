@@ -92,6 +92,19 @@
       "TOPICS": "متابعة المواضيع",
       "NEWS": "احدث الاخبار"
     }
+  },
+  "LEADERBOARD": {
+    "YOUR_LEADERBOARD": "لوحة الصدارة الخاصة بك",
+    "DESCRIPTION": "إنجازاتك الموثقة في المجتمع العالمي يمكن أن تساعدك في التميز في مكان عملك.",
+    "CONGRATS": "تهانينا!",
+    "BEGINNER_LEVEL": "لقد حصلت على مستوى المبتدئ",
+    "SHARE_COMMUNITY": "شارك في المجتمع",
+    "MY_POINTS": "نقاطي",
+    "POINTS": "نقطة",
+    "LAST_UPDATED": "آخر تحديث في",
+    "ACTIVITIES_POINTS": "النشاطات والنقاط",
+    "BADGE_POINTS": "الشارات",
+    "GAIN_POINTS": "كيفية الحصول علي النقاط؟"
   }
 }
 

@@ -12,15 +12,14 @@
       &.active {
         font-weight: 700;
 
-        &::after {
+        &::before {
           content: "";
           background-color: $secondary-color;
-          width: 100%;
+          width: 90px;
           height: 4px;
           border-radius: 200px;
           position: absolute;
           bottom: -10px;
-          left: 0;
         }
       }
     }
