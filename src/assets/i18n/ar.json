@@ -2,6 +2,9 @@
   "LANGUAGE": {
     "OTHER_LANG": "English"
   },
+  "COMMON": {
+      "FOLLOWING": "متابع"
+    },
   "AUTH": {
     "INVITATION": {
       "MESSAGE": "أنت مدعو بواسطة",
@@ -91,6 +94,10 @@
       "TREND": "الرائد",
       "TOPICS": "متابعة المواضيع",
       "NEWS": "احدث الاخبار"
+    },
+    "TREND": {
+      "QUESTION_ON": "قام بإضافة سؤال في",
+      "MEMBER": "عضو تفاني"
     }
   },
   "LEADERBOARD": {
