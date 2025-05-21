@@ -1,0 +1,30 @@
+@use "variables" as *;
+
+:root {
+  --primary-color: #4f008c;
+}
+
+.p-dialog .p-dialog-header,
+.p-dialog .p-dialog-content {
+  border-radius: 0;
+}
+
+.p-dialog .p-dialog-header{
+  padding-bottom: 5px;
+}
+
+.p-icon{
+  color: $secondary-color;
+}
+
+.p-button-label {
+  font-weight: unset;
+}
+
+.rtl{
+    direction: rtl;
+}
+
+.ltr{
+    direction: ltr;
+}

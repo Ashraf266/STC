@@ -1,0 +1,15 @@
+<nav class="bg-primary flex align-items-center justify-content-between">
+  <img
+    src="/assets/svgs/logo.svg"
+    type="image/svg+xml"
+    class="mx-5 my-3 cursor-pointer"
+    routerLink=""
+  />
+  <p
+    (click)="changeLanguage()"
+    class="flex align-items-center px-4 cursor-pointer text-bold-xs"
+  >
+    {{ "LANGUAGE.OTHER_LANG" | translate }}
+    <img class="px-2" src="/assets/svgs/lang.svg" />
+  </p>
+</nav>

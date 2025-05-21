@@ -1,0 +1,23 @@
+@use '../utils' as *;
+
+.sidebar{
+    margin-top: 13px;
+    margin-inline-start: 8px;
+    padding: 0;
+    width: 240px;
+    ul{
+        li{
+            padding: 6px 30px;
+        }
+    }
+    .active{
+        background-color: $dark-pruple;
+        border-left: 5px solid $secondary-color;
+        font-weight: 700;
+    }
+    .active.border-right{
+        border: none;
+        border-right: 5px solid $secondary-color;
+    }
+
+}

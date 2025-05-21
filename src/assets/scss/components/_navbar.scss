@@ -1,0 +1,19 @@
+.navbar {
+  .lang-button {
+    padding-inline-start: 27px !important;
+    &::before,
+    &::after {
+      content: "";
+      border-left: 5px solid white;
+      height: 90px;
+      position: absolute;
+    }
+
+    &::before {
+      left: 0;
+    }
+    &::after {
+      right: 0;
+    }
+  }
+}

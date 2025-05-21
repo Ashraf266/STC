@@ -1,0 +1,27 @@
+@use "../utils" as *;
+
+.home {
+  .welcome {
+    border-bottom: 2px solid $grey-color-1;
+  }
+
+  .homenav {
+    li {
+      position: relative;
+      min-width: 90px;
+      &.active {
+        font-weight: 700;
+
+        &::before {
+          content: "";
+          background-color: $secondary-color;
+          width: 90px;
+          height: 4px;
+          border-radius: 200px;
+          position: absolute;
+          bottom: -10px;
+        }
+      }
+    }
+  }
+}

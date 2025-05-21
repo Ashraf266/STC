@@ -1,0 +1,70 @@
+<section>
+  <div class="mt-7">
+    <div class="flex align-items-center mx-6">
+      <a
+        routerLink="/invitation"
+        class="text-secondary text-semibold-md no-underline"
+        >{{ "AUTH.INVITATION.ACCEPT" | translate }}</a
+      >
+      <i
+        class="pi text-grey mx-1"
+        [ngClass]="{
+        'pi-angle-left': translate.currentLang === 'ar',
+        'pi-angle-right': translate.currentLang !== 'ar',
+      }"
+      ></i>
+      <a class="text-grey text-semibold-md">{{
+        "AUTH.TERMS.ACCEPT" | translate
+      }}</a>
+    </div>
+
+    <div class="p-7 mt-6 bg-light-grey w-10 mx-auto">
+      <h2 class="text-normal-xl my-0">{{ "AUTH.TERMS.ACCEPT" | translate }}</h2>
+      <p class="text-grey">
+        {{ "AUTH.TERMS.READ_AND_ACCEPT" | translate }}
+      </p>
+
+      <div>
+        <h3 class="text-semibold-md-1">
+          {{ "AUTH.TERMS.SECTIONS.CONFIDENTIALS.TITLE" | translate }}
+        </h3>
+        <p class="text-normal-sm">
+          {{ "AUTH.TERMS.SECTIONS.CONFIDENTIALS.CONTENT_1" | translate }}
+        </p>
+        <p class="text-normal-sm">
+          {{ "AUTH.TERMS.SECTIONS.CONFIDENTIALS.CONTENT_2" | translate }}
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-semibold-md-1">
+          {{ "AUTH.TERMS.SECTIONS.EXCLUSIONS.TITLE" | translate }}
+        </h3>
+        <p class="text-normal-sm">
+          {{ "AUTH.TERMS.SECTIONS.EXCLUSIONS.CONTENT_1" | translate }}
+        </p>
+        <p class="text-normal-sm">
+          {{ "AUTH.TERMS.SECTIONS.EXCLUSIONS.CONTENT_2" | translate }}
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-semibold-md-1">
+          {{ "AUTH.TERMS.SECTIONS.USE.TITLE" | translate }}
+        </h3>
+        <p class="text-normal-sm">
+          {{ "AUTH.TERMS.SECTIONS.USE.CONTENT" | translate }}
+        </p>
+      </div>
+    </div>
+
+    <div class="flex justify-content-end py-8 w-11 mx-auto px-5">
+      <p-button
+        styleClass="bg-secondary border-none border-noround text-bold-xs-1"
+        label="{{ 'AUTH.TERMS.ACCEPT_AND_CONTINUE' | translate }}"
+        (onClick)="logIn()"
+        routerLink=""
+      />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,3 @@
+<div *ngFor="let post of posts">
+    <home-trend-post [username]="post.author" postDate="{{post.publishedAt | date}}"></home-trend-post>
+</div>

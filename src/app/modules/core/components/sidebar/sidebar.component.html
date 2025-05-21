@@ -1,0 +1,33 @@
+<ul class="list-none p-0 pt-7">
+  <li
+    class="cursor-pointer text-normal-sm-1"
+    [ngClass]="{ 'border-right': translate.currentLang === 'ar' }"
+    routerLink="/home"
+    [routerLinkActive]="['active']"
+  >
+    {{ "LAYOUT.SIDEBAR.HOME" | translate }}
+  </li>
+  <li class="cursor-pointer mt-4 text-normal-sm-1">
+    {{ "LAYOUT.SIDEBAR.DISCOVER" | translate }}
+  </li>
+  <li class="cursor-pointer mt-4 text-normal-sm-1">
+    {{ "LAYOUT.SIDEBAR.COMMUNITY" | translate }}
+  </li>
+  <li class="cursor-pointer mt-4 text-normal-sm-1">
+    {{ "LAYOUT.SIDEBAR.PRODUCTS_AND_SERVICES" | translate }}
+  </li>
+  <li class="cursor-pointer mt-4 text-normal-sm-1">
+    {{ "LAYOUT.SIDEBAR.FEEDBACK" | translate }}
+  </li>
+  <li class="cursor-pointer mt-4 text-normal-sm-1">
+    {{ "LAYOUT.SIDEBAR.FAQ" | translate }}
+  </li>
+  <li
+    class="cursor-pointer mt-4 text-normal-sm-1"
+    [ngClass]="{ 'border-right': translate.currentLang === 'ar' }"
+    routerLink="/leaderboard"
+    [routerLinkActive]="'active'"
+  >
+    {{ "LAYOUT.SIDEBAR.LEADERBOARD" | translate }}
+  </li>
+</ul>

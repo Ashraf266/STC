@@ -1,0 +1,33 @@
+<div class="px-5 py-5 ltr">
+  <div class="shadow-2 mb-8 badge-table">
+    <p-table [value]="badges">
+      <ng-template pTemplate="header">
+        <tr>
+          <th class="text-black bg-white">Level</th>
+          <th class="text-black bg-white">Eligble for</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-badge>
+        <tr>
+          <td>
+            <div class="flex">
+              <div class="img">
+                <img width="55px" [src]="badge.img" alt="avatar-img" />
+              </div>
+              <div>
+                <p class="m-0 text-semibold-sm-1 text-primary mx-2">
+                  {{ badge.name }}
+                </p>
+                <p class="my-0 mx-2">{{ badge.points }}</p>
+              </div>
+              <div class="m-0" *ngIf="badge.extra">
+                <p class="{{badge.extraColor}} p-1 my-0 text-semibold-xs font-normal border-round-3xl text-white">{{ badge.extra }}</p>
+              </div>
+            </div>
+          </td>
+          <td class="text-black">{{ badge.details }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

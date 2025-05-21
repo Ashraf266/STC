@@ -1,0 +1,211 @@
+<section class="invitation-page">
+  <div class="px-4 pt-8">
+    <div class="grid align-items-center justify-content-center">
+      <div
+        class="lg:col-7 col-12 lg:mb-0 mb-5"
+        [ngClass]="{
+        'lg:pl-6': translate.currentLang === 'ar',
+        'lg:pr-6': translate.currentLang !== 'ar',
+      }"
+      >
+        <p-card styleClass="border-round-2xl px-3">
+          <h2 class="text-black text-bold-sm">
+            {{ "AUTH.INVITATION.MESSAGE" | translate }}
+          </h2>
+          <div class="flex align-items-start mb-6">
+            <div>
+              <img
+                src="/assets/images/avatar-0.png"
+                alt="avatar"
+                class="mx-3 avatar-lg"
+              />
+            </div>
+            <div>
+              <h3 class="mt-0 mb-2 text-primary">{{ user.inviter.name }}</h3>
+              <p class="mb-2 mt-0 pt-1 text-sm">
+                {{ user.inviter.position }}
+              </p>
+              <a
+                class="no-underline flex align-items-center text-secondary text-semibold-sm cursor-pointer"
+                >{{ "AUTH.INVITATION.SEE_PROFILE" | translate }}
+                <i
+                  class="pi"
+                  [ngClass]="{
+                  'pi-angle-left': translate.currentLang === 'ar',
+                  'pi-angle-right': translate.currentLang !== 'ar',
+                }"
+                ></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="flex justify-content-end align-items-center">
+            <a
+              (click)="showReject()"
+              class="no-underline mx-3 text-black cursor-pointer text-normal"
+              >{{ "AUTH.INVITATION.NOT_INTERESTED" | translate }}</a
+            >
+            <p-button
+              styleClass="bg-secondary border-none text-normal-1"
+              label="{{ 'AUTH.INVITATION.ACCEPT' | translate }}"
+              (onClick)="showOTP()"
+            />
+          </div>
+        </p-card>
+      </div>
+      <div class="lg:col-4 col-12 invitation-image p-0">
+        <img
+          src="/assets/images/invitation.png"
+          alt="invitation image"
+          class="block w-full"
+        />
+      </div>
+    </div>
+  </div>
+
+  <p-dialog
+    [modal]="true"
+    [(visible)]="otpVisible"
+    class="border-noround"
+    [style]="{ width: '560px' }"
+  >
+    <div class="otp-input px-5" [formGroup]="otpForm">
+      <h2 class="text-black text-bold-md">
+        {{ "AUTH.VERIFICATION.OTP.ENTER" | translate }}
+      </h2>
+      <p class="text-grey text-normal-sm-1">
+        {{ "AUTH.VERIFICATION.OTP.EMAIL_SENT" | translate }}<br />
+        <span class="text-bold-xs-2">{{ user.userMail }}</span>
+      </p>
+
+      <p-inputOtp
+        class="justify-content-center my-6 ltr"
+        [integerOnly]="true"
+        [ngClass]="{ 'input-error': !otpVerfication() }"
+        formControlName="otp"
+      />
+
+      <p class="text-secondary cursor-pointer mb-8 text-bold-xs-1">
+        {{ "AUTH.VERIFICATION.OTP.RESEND" | translate }}
+      </p>
+
+      <p-button
+        styleClass="bg-secondary border-none border-noround block w-full text-bold-xs-1 mb-6"
+        label="{{ 'AUTH.VERIFICATION.VERIFY_ACCOUNT' | translate }}"
+        (onClick)="showService()"
+        [disabled]="!otpVerfication()"
+      />
+    </div>
+  </p-dialog>
+
+  <p-dialog
+    [modal]="true"
+    [(visible)]="serviceVisible"
+    class="border-noround"
+    [style]="{ width: '560px' }"
+  >
+    <div class="px-5">
+      <h2 class="text-black text-bold-md mb-0">
+        {{ "AUTH.SERVICES.SELECT" | translate }}
+      </h2>
+      <p class="text-grey text-normal-sm-1">
+        {{ "AUTH.SERVICES.SELECT_FROM_LIST" | translate }}
+      </p>
+
+      <div class="mt-4 mb-7" [formGroup]="servicesForm">
+        <div class="mb-4">
+          <p-checkbox
+            value="fixed"
+            inputId="fl"
+            class="mx-3"
+            formControlName="services"
+          />
+          <label for="fl" class="text-semibold-sm">{{
+            "AUTH.SERVICES.OPTIONS.FIXED_LINES" | translate
+          }}</label>
+        </div>
+        <div class="mb-4">
+          <p-checkbox
+            value="mobile"
+            inputId="ml"
+            class="mx-3"
+            formControlName="services"
+          />
+          <label for="ml" class="text-semibold-sm">{{
+            "AUTH.SERVICES.OPTIONS.MOBILE_LINES" | translate
+          }}</label>
+        </div>
+        <div class="mb-4">
+          <p-checkbox
+            value="adsl"
+            inputId="adsl"
+            class="mx-3"
+            formControlName="services"
+          />
+          <label for="adsl" class="text-semibold-sm">{{
+            "AUTH.SERVICES.OPTIONS.ADSL_DATA" | translate
+          }}</label>
+        </div>
+        <div class="mb-4">
+          <p-checkbox
+            value="devices"
+            inputId="devices"
+            class="mx-3"
+            formControlName="services"
+          />
+          <label for="devices" class="text-semibold-sm">{{
+            "AUTH.SERVICES.OPTIONS.DEVICES" | translate
+          }}</label>
+        </div>
+      </div>
+
+      <p-button
+        styleClass="bg-secondary border-none border-noround block w-full text-bold-xs-1"
+        label="{{ 'AUTH.SERVICES.DONE' | translate }}"
+        routerLink="/auth/terms"
+        (onClick)="sendServices()"
+      />
+
+      <a
+        routerLink="/auth/terms"
+        class="text-black block text-center mt-4 text-semibold-sm-1"
+        >{{ "AUTH.SERVICES.SKIP" | translate }}</a
+      >
+    </div>
+  </p-dialog>
+
+  <p-dialog
+    [modal]="true"
+    [(visible)]="rejectVisible"
+    class="border-noround"
+    [style]="{ width: '560px' }"
+  >
+    <div [formGroup]="rejectionForm" class="px-5">
+      <h2 class="text-black text-bold-md mb-5 mt-0">
+        {{ "AUTH.INVITATION.REJECT.CONFIRM_TITLE" | translate }}
+      </h2>
+      <p class="text-grey text-normal-sm-1">
+        {{ "AUTH.INVITATION.REJECT.CONFIRM_MESSAGE" | translate }}<br />
+        {{ "AUTH.INVITATION.REJECT.EXIT_WARNING" | translate }}
+      </p>
+
+      <textarea
+        rows="8"
+        cols="30"
+        pInputTextarea
+        [autoResize]="false"
+        formControlName="feedback"
+        class="text-area block w-11 mx-auto mb-7 mt-5"
+      ></textarea>
+
+      <div class="flex justify-content-end">
+        <p-button
+          styleClass="bg-secondary border-none border-noround block text-bold-xs-1 px-6"
+          label="{{ 'AUTH.INVITATION.REJECT.CONFIRM' | translate }}"
+          routerLink="/auth/invitation-expired"
+          (onClick)="sendFeedback()"
+        />
+      </div>
+    </div>
+  </p-dialog>
+</section>

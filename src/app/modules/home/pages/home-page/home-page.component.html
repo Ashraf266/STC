@@ -1,0 +1,60 @@
+<div class="home">
+  <div class="welcome mb-5">
+    <div class="flex align-items-start pb-4">
+      <div>
+        <img
+          src="/assets/images/avatar-0.png"
+          alt="avatar"
+          class="mx-3 avatar-lg"
+        />
+      </div>
+      <div class="flex justify-content-between flex-grow-1">
+        <div>
+          <h3 class="mt-0 mb-2 ml-4 text-primary text-bold-md-1">
+            {{ "HOME.WELCOME" | translate }}
+          </h3>
+          <p class="mb-2 my-0 ml-4 text-normal-md">
+            Naser Mohammed A Almuhawwis
+          </p>
+          <img src="/assets/images/premium.png" alt="badge" width="165" />
+        </div>
+        <p-button
+          styleClass="bg-secondary border-none text-bold-xs border-noround"
+          label="{{ 'HOME.VIEW_ACCOUNT' | translate }}"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="main grid">
+    <div class="content col-9">
+      <ul class="list-none p-0 flex mx-3 homenav">
+        <li
+          class="mx-3 text-semibold-md cursor-pointer"
+          routerLink="trends"
+          [routerLinkActive]="['active']"
+        >
+          {{ "HOME.NAV.TREND" | translate }}
+        </li>
+        <li
+          class="mx-3 text-semibold-md cursor-pointer"
+          routerLink="followed-topics"
+          [routerLinkActive]="['active']"
+        >
+          {{ "HOME.NAV.TOPICS" | translate }}
+        </li>
+        <li
+          class="mx-3 text-semibold-md cursor-pointer"
+          routerLink="latest-news"
+          [routerLinkActive]="['active']"
+        >
+          {{ "HOME.NAV.NEWS" | translate }}
+        </li>
+      </ul>
+
+      <div class="pt-6">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+    <home-videos class="col-3"></home-videos>
+  </div>
+</div>
